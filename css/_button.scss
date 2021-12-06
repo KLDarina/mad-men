@@ -1,0 +1,101 @@
+.button {
+  display: inline-block;
+  padding: 17px 55px 15px;
+  background: linear-gradient(139.14deg, #ffd595 -24.26%, #f3ac40 119.76%);
+  border-radius: 48px;
+  font-family: $main-font-family;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $dark-text-color;
+  text-decoration: none;
+  position: relative;
+  width: 100%;
+  @media screen and (min-width: 550px) {
+    width: initial;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(139.14deg, #ffc267 -24.26%, #d89229 119.76%);
+    padding: 17px 55px 15px;
+    border-radius: 48px;
+    z-index: 1;
+    opacity: 0;
+    transition: $main-transition;
+  }
+  &:hover:after {
+    opacity: 1;
+  }
+  > span {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    &.layer-1 {
+      mix-blend-mode: hard-light;
+      border: 3.62917px solid #f0c078;
+      filter: blur(16.75px);
+      border-radius: 48px;
+      z-index: 2;
+    }
+    &.layer-2 {
+      mix-blend-mode: hard-light;
+      border: 4.74583px solid #f0c078;
+      filter: blur(5.58333px);
+      border-radius: 48px;
+      z-index: 3;
+    }
+    &.layer-3 {
+      mix-blend-mode: hard-light;
+      border: 3.62917px solid rgba(245, 200, 133, 0.2);
+      box-shadow: inset -0.26px 0.52px 0.13px rgba(255, 255, 255, 0.5);
+      filter: drop-shadow(0px 2px 3.2px #d8a963)
+        drop-shadow(0px 1.3px 1.4px rgba(57, 38, 0, 0.7));
+      border-radius: 48px;
+      z-index: 4;
+    }
+    &.layer-4 {
+      border: 2.23333px solid #fad091;
+      filter: blur(0.558333px);
+      border-radius: 48px;
+      z-index: 5;
+    }
+    &.layer-5 {
+      border: 1.11667px solid #f7f7ff;
+      filter: blur(0.372222px);
+      border-radius: 48px;
+      z-index: 6;
+    }
+    &.text {
+      padding: 17px 55px 15px;
+      font-family: $main-font-family;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: $dark-text-color;
+      z-index: 7;
+    }
+  }
+}

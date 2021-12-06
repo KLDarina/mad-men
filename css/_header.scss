@@ -1,0 +1,107 @@
+.header {
+  width: 100%;
+  padding: 18px 16px;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #454677;
+  background: $main-bg;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (min-width: 2000px) {
+    padding: 24px calc(100vw - 1920px);
+  }
+  @media screen and (min-width: 1600px) and (max-width: 1999px) {
+    padding: 24px $padding-aside-desktop;
+  }
+  @media screen and (min-width: 1100px) and (max-width: 1599px) {
+    padding: 24px 150px;
+  }
+  @media screen and (min-width: 550px) and (max-width: 1099px) {
+    padding: 18px 32px;
+  }
+  &__navigation {
+    display: none;
+    @media screen and (min-width: 1100px) {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+  &__list {
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    &-item {
+      display: inline-block;
+      margin-left: 40px;
+      &.active {
+        > a {
+          color: #f3ac40;
+        }
+      }
+      > a {
+        text-decoration: none;
+        font-family: $main-font-family;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 145%;
+        text-transform: capitalize;
+        color: $light-text-color;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: #f3ac40;
+        }
+      }
+    }
+  }
+  &__button {
+    margin-left: 56px;
+  }
+}
+
+.burger {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    writing-mode: tb-rl;
+    width: 20px;
+    height: 2px;
+    background: #f7f7ff;
+    transform: translate(-50%, -50%);
+    &:first-child {
+      top: calc(50% - 5px);
+    }
+    &:last-child {
+      top: calc(50% + 5px);
+    }
+  }
+  @media screen and (min-width: 1100px) {
+    display: none;
+  }
+  &.active {
+    > div {
+      opacity: 0;
+      &:first-child {
+        transform: translate(-50%, -50%) rotate(-45deg);
+        opacity: 1;
+        top: 50%;
+      }
+      &:last-child {
+        transform: translate(-50%, -50%) rotate(45deg);
+        opacity: 1;
+        top: 50%;
+      }
+    }
+  }
+}
